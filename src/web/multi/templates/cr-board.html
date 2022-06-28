@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> THIS IS GONNA BE A NEW BOARD</h1>
+
+<ul>
+
+    {{ board.name }}
+    <br>
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-secondary"> ADD BOARD </button>
+    <br>
+    <a href="{% url 'home' %}"> Back </a>
+    <br>
+    </form>
+
+
+
+
+
+
+
+</ul>
+
+{% endblock %}

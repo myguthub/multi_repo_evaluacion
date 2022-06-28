@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1> Index </h1>
+
+<ul>
+{% for board in object_list %}
+
+    <li><a href="{% url 'board-panel' board.pk %}"> {{ board.name }}</a>
+    <br>
+    {{ board.pk }}
+    {{ board.description }}
+    {{ board.adminPost}}
+    <br>
+    {{ board.tag}}
+    <button class="btn btn-dark"> <a href="{% url 'update-board' board.pk %}"> Edit</a></button>
+    <button class="btn btn-dark"> <a href="{% url 'delete-board' board.pk %}"> Delete</a></button>
+    </li>
+    <br>
+    <br>
+
+
+{% endfor %}
+</ul>
+
+<button> <a href="{% url 'create-board' %}"> create a board </a> </button>
+
+{% endblock %}

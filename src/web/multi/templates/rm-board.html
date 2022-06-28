@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> delete board </h1>
+
+<ul>
+
+    <br>
+    <br>
+    <h4>Delete {{ board.name }}</h4>
+    <form method="POST">
+        {% csrf_token %}
+        <button class="btn btn-secondary"> Delete </button>
+    <br>
+    <a href="{% url 'home' %}"> Back </a>
+    <br>
+    </form>
+
+</ul>
+
+{% endblock %}

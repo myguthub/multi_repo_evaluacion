@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<ul>
+    <!-- <h2> <a href ='#'> create Thread </a> </h2> -->
+
+
+    <h2>{{ board.name }}</h2>
+    <h4>board desc: </h4>
+    {{ board.description }}
+    <br>
+    Tag: {{ board.tag }}
+    
+    <br>
+    {% if not board.posts.all %}
+        no posts yet..
+          <button> <a href="{% url 'create-post' board.pk %}"> add one? </a> </button>
+
+    {% else %}
+        {% for post in board.posts.all %}
+
+        <hr>
+        <br>
+        {{post.date }} <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="{{ post.pk }}"> o.{{ post.pk }}</button>
+        <button class="btn btn-dark"> <a href="{% url 'update-post' post.pk %}"> Edit</a></button>
+        <button class="btn btn-dark"> <a href="{% url 'delete-post' post.pk %}"> Delete</a></button>
+        <br><br>
+
+        <br><br>
+        
+        {{ post.description }}
+        <br><br>
+        
+
+        {% endfor %}
+    {% endif %}
+
+    <br>
+    <a href="{% url 'home' %}"> Back </a>
+
+    <br>
+    <button> <a href="{% url 'create-post' board.pk %}"> create a post </a> </button>
+
+</ul>
+
+{% endblock %}
+
+
