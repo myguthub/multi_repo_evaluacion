@@ -7,6 +7,6 @@ from django.urls import reverse_lazy
 class AccRegisterView(generic.CreateView):
     form_class = UserCreationForm
     template_name = 'registration/cr-acc.html'
-    success_url = reverse_lazy('home.html')
+    success_url = reverse_lazy('home')
 
 # Create your views here.
