@@ -125,3 +125,7 @@ body{
     min-height: 1px;
     padding: 1rem;
 }
+
+<nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+</nav>
