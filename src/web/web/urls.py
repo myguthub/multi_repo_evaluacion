@@ -34,7 +34,10 @@ urlpatterns = [
     path('post/update/<int:pk>', UpdatePostView.as_view(), name='update-post' ),
     path('post/delete/<int:pk>', DeletePostView.as_view(), name='delete-post' ),
 
+    # Account creations urls.py include
     path('registration/', include('django.contrib.auth.urls')),
-    path('registration/', include('accounts.urls'))
+    path('registration/', include('accounts.urls')),
 
+    # Api urls.py
+    path('api/', include('api.urls')),
 ]
