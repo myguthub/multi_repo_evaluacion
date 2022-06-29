@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> login </h1>
+
+<ul>
+
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-secondary"> Login </button>
+    <br>
+    <a href="{% url 'home' %}"> Back </a>
+    <br>
+    </form>
+
+
+
+
+
+
+
+</ul>
+
+{% endblock %}

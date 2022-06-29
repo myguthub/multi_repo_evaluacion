@@ -17,6 +17,16 @@
     <!--  -->
   </head>
   <body>
+    <nav>
+      <a href="{% url 'home' %}"> Home </a>
+      <li>
+        <a href="{% url 'register' %}"> Register </a>
+        <a href="{% url 'login' %}"> Login </a>
+      </li>
+
+    </nav>
+
+
 
     {% block content %}
 
