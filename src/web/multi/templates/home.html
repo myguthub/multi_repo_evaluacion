@@ -31,12 +31,7 @@
                     </p>-->
                     {{ board.tag}}
 
-                    <button type="button" class="btn btn-outline-primary"> <a href="{% url 'update-board' board.pk %}"> Edit</a></button>
-                    <button type="button" class="btn btn-outline-danger"> <a href="{% url 'delete-board' board.pk %}"> Delete</a></button>
-
-                    <button class="btn btn-dark"> <a href="{% url 'update-board' board.pk %}"> Edit</a></button>
-                    <button class="btn btn-dark"> <a href="{% url 'delete-board' board.pk %}"> Delete</a></button>
-
+                  <!--diseño de botones-->
 
                     <button type="button" class="btn btn-outline-primary"> <a href="{% url 'update-board' board.pk %}" style="text-decoration:none"> Editar </a></button>
                     <button type="button" class="btn btn-outline-danger"> <a href="{% url 'delete-board' board.pk %}" style="text-decoration:none"> Eliminar </a></button>
@@ -52,7 +47,6 @@
     </div>
     
 <!-- /Forum List -->
-
 
 {% endfor %}
 </ul>
