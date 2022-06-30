@@ -9,9 +9,9 @@
     <form class="form-horizontal col-md-6 login-form-1" method="post"> 
         {% csrf_token %}
         {{form.as_p}}
-    <button class="btn btn-outline-secondary"> Iniciar sesión </button>
+    <button class="btn btn-outline-primary"> Iniciar sesión </button>
     
-    <button class="btn btn-outline-secondary "> <a href="{% url 'home' %}"> Regresar </a></button>
+    <button class="btn btn-outline-success" > <a href="{% url 'home' %}" style="text-decoration:none"> Regresar </a></button>
     <br>
     </form>
 
