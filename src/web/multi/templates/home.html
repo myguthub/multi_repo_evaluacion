@@ -30,18 +30,17 @@
                         {{ board.adminPost}}
                     </p>-->
                     {{ board.tag}}
-<<<<<<< HEAD
-<<<<<<< Updated upstream
+
                     <button type="button" class="btn btn-outline-primary"> <a href="{% url 'update-board' board.pk %}"> Edit</a></button>
                     <button type="button" class="btn btn-outline-danger"> <a href="{% url 'delete-board' board.pk %}"> Delete</a></button>
-=======
+
                     <button class="btn btn-dark"> <a href="{% url 'update-board' board.pk %}"> Edit</a></button>
                     <button class="btn btn-dark"> <a href="{% url 'delete-board' board.pk %}"> Delete</a></button>
->>>>>>> Stashed changes
-=======
+
+
                     <button type="button" class="btn btn-outline-primary"> <a href="{% url 'update-board' board.pk %}" style="text-decoration:none"> Editar </a></button>
                     <button type="button" class="btn btn-outline-danger"> <a href="{% url 'delete-board' board.pk %}" style="text-decoration:none"> Eliminar </a></button>
->>>>>>> 342d5b1e9ceca996705b6ee173ed2b8ea6771437
+
 
                     <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body"> <p>ID de post: {{ board.pk }} </p></a></h6>
                   
@@ -53,11 +52,6 @@
     </div>
     
 <!-- /Forum List -->
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
 
 
 {% endfor %}
