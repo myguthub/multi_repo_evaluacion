@@ -30,6 +30,7 @@
                         {{ board.adminPost}}
                     </p>-->
                     {{ board.tag}}
+                    <!--diseño de botones-->
                     <button type="button" class="btn btn-outline-primary"> <a href="{% url 'update-board' board.pk %}" style="text-decoration:none"> Editar </a></button>
                     <button type="button" class="btn btn-outline-danger"> <a href="{% url 'delete-board' board.pk %}" style="text-decoration:none"> Eliminar </a></button>
 
