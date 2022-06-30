@@ -2,22 +2,21 @@
 
 {% block content %}
 
-<h1> edit boards... </h1>
+<h1> Editar tema </h1>
+<h5><p>Tema: {{ board.name }} </p></h5>
+<hr>
 
 <ul>
-
-    {{ board.name }}
     <br>
     <br>
     <form method="POST">
         {% csrf_token %}
         {{form.as_p}}
-        <button class="btn btn-secondary"> update </button>
-    <br>
-    <a href="{% url 'home' %}"> Back </a>
+        <button class="btn btn-outline-primary">update </button>
+        <button class="btn btn-outline-success"> <a href="{% url 'home' %}"> Back </a></button><class>
     <br>
     </form>
-
 </ul>
 
 {% endblock %}
+
