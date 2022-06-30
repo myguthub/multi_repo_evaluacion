@@ -1,5 +1,6 @@
 # from pyexpat import model
 # from turtle import textinput
+from distutils.command.upload import upload
 from django.db import models
 from django.urls import reverse
 
@@ -15,6 +16,9 @@ class Board(models.Model):
             choices=BoardCategory.choices,
             default=BoardCategory.Opsfw
         )
+
+    image = models.ImageField( null=True, blank=True, upload_to="images/") # this field is from Pillow 
+
     name = models.CharField(default="Pick a name", max_length=50)
     # title = name
 
