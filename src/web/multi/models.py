@@ -17,7 +17,7 @@ class Board(models.Model):
             default=BoardCategory.Opsfw
         )
 
-    image = models.ImageField( null=True, blank=True, upload_to="images/") # this field is from Pillow 
+    image = models.ImageField(default="images/noimage.jpeg", upload_to="images/") # this field is from Pillow 
 
     name = models.CharField(default="Pick a name", max_length=50)
     # title = name
