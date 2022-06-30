@@ -4,44 +4,59 @@
 
 
 <ul>
-    <!-- <h2> <a href ='#'> create Thread </a> </h2> -->
-
-
+   
+    <!---------muestra el título------->    
+    <br>
     <h2>{{ board.name }}</h2>
-    <h4>board desc: </h4>
-    {{ board.description }}
+      <!---------muestra el subtítulo------->  
+    <h6><i>{{ board.description }}</i></h6>
+    <br>
+    
+    <!---------muestra el desglose del post------->    
+    {{ board.adminPost }}
     <br>
     Tag: {{ board.tag }}
     
+      <!---------verifica si no hay posteos------->  
     <br>
     {% if not board.posts.all %}
-        no posts yet..
-          <button> <a href="{% url 'create-post' board.pk %}"> add one? </a> </button>
+    <br>
+       <p> <i> Aún no hay nada por ver. ¡Crea un nuevo post! </i> </p>
 
+    <!---------verifica si hay posteos------->  
     {% else %}
         {% for post in board.posts.all %}
 
-        <hr>
-        <br>
-        {{post.date }} <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="{{ post.pk }}"> o.{{ post.pk }}</button>
-        <button class="btn btn-dark"> <a href="{% url 'update-post' post.pk %}"> Edit</a></button>
-        <button class="btn btn-dark"> <a href="{% url 'delete-post' post.pk %}"> Delete</a></button>
-        <br><br>
-
-        <br><br>
+    <!---------implementación de cards para mostrar los comentarios de noticias------->  
         
-        {{ post.description }}
-        <br><br>
+        <div class="inner-main-body p-2 p-sm-3 collapse forum-content show">
+            <div class="card mb-2">
+                <div class="card-body p-2 p-sm-3">
+                    <div class="media forum-item">
+                        <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-circle" width="50" alt="User" /></a>
+                       
+                <!--contenido del post-->        
+                {{ post.description }} 
+
+                <hr>
+                
+                <p><i>Publicado el {{post.date }}</i> </p>
+                <button class="btn btn-outline-primary"> <a href="{% url 'update-post' post.pk %}"> Editar</a></button>
+                <button class="btn btn-outline-danger"> <a href="{% url 'delete-post' post.pk %}"> Eliminar</a></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
         
 
-        {% endfor %}
-    {% endif %}
+{% endfor %}
+{% endif %}
 
-    <br>
-    <a href="{% url 'home' %}"> Back </a>
+<br>
+<button class="btn btn-outline-primary"><a href="{% url 'home' %}"> Regresar </a> </button>
 
-    <br>
-    <button> <a href="{% url 'create-post' board.pk %}"> create a post </a> </button>
+<button class="btn btn-outline-success"> <a href="{% url 'create-post' board.pk %}"> Crear un post </a> </button>
 
 </ul>
 
