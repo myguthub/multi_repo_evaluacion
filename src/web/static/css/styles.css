@@ -124,6 +124,7 @@ body{
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1rem;
+<<<<<<< Updated upstream
 }
 
 .login-container{
@@ -175,3 +176,6 @@ body{
     color:rgba(0, 0, 0, 0.19)
 }
 
+=======
+}
+>>>>>>> Stashed changes
