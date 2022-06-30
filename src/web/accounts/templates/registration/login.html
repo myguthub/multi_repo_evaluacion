@@ -2,46 +2,41 @@
 
 {% block content %}
 
-<h1> Login </h1>
-
-<ul>
-
-    <br>
-    <div class="container login-container">
-        <div class="row">
-            <div class="col-md-6 login-form-1">
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="form-control">{{form.as_p}}</div>
-                    <div class="form-group">
-                        <button class="btn btn-secondary"> Login </button>   
-                        <button class="btn btn-secondary"><a href="{% url 'home' %}"> Back </a> </button>
-                    </div>
-                </form>
-             </div>
-        </div>
-    </div>
-
-</ul>
-
 <div class="container login-container">
-    <div class="row">
-        <div class="col-md-6 login-form-1">
-            <h3>Iniciar sesión</h3>
-            <form method="POST">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Email *" value="" />
+<form class="form-horizontal col-md-6 login-form-1" method="post"> 
+    {% csrf_token %}
+    <h3>Iniciar sesión</h3>
+    <br></br>
+    
+    <fieldset>
+        <legend>{{ title }}</legend>
+        {% for field in form %}
+            {% if field.errors %}
+                <div class="control-group error ">                    
+                    <label class="control-label">{{ field.label }}</label> 
+                    <div class="controls">{{ field }}
+                        <span class="help-inline">
+                            {% for error in  field.errors %}{{ error }}{% endfor %}
+                        </span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Your Password *" value="" />
+            {% else %}
+                <div class="control-group ">
+                    <label class="control-label">{{ field.label }}</label> 
+                    <div class="controls">{{ field }}
+                        {% if field.help_text %}
+                            <p class="help-inline"><small>{{ field.help_text }}</small></p>
+                        {% endif %}
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="submit" class="btnSubmit" value="Login" />
-                </div>
-                <div class="form-group">
-                    <a href="#" class="ForgetPwd">Forget Password?</a>
-                </div>
-            </form>
-        </div>
+            {% endif %}
+        {% endfor %}
+    </fieldset>
+    <div class="form-actions">
+        <br>
+        <button type="submit" class="btn btn-primary" >Enviar</button>
+    </div>
+</form>
+</div>
 
 {% endblock %}
