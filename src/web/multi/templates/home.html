@@ -2,11 +2,13 @@
 
 {% block content %}
 
-
+<br>
 <h1> Noticias </h1>
+<h6>Cine, espectáculos y más. Todo el bum-bum del séptimo arte, aquí.</h6>
 
 <ul>
 {% for board in object_list %}
+
 
   <!-- Forum List -->
   
@@ -30,12 +32,16 @@
                         {{ board.description }}
                     </p>
 
-                    <p class="text-secondary">
+                    <!--<p class="text-secondary">
                         {{ board.adminPost}}
-                    </p>
+                    </p>-->
                     {{ board.tag}}
-                    <button type="button" class="btn btn-outline-primary"> <a href="{% url 'update-board' board.pk %}"> Edit</a></button>
-                    <button type="button" class="btn btn-outline-danger"> <a href="{% url 'delete-board' board.pk %}"> Delete</a></button>
+
+                  <!--diseño de botones-->
+
+                    <button type="button" class="btn btn-outline-primary"> <a href="{% url 'update-board' board.pk %}" style="text-decoration:none"> Editar </a></button>
+                    <button type="button" class="btn btn-outline-danger"> <a href="{% url 'delete-board' board.pk %}" style="text-decoration:none"> Eliminar </a></button>
+
 
                     <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body"> <p>ID de post: {{ board.pk }} </p></a></h6>
                   
@@ -47,7 +53,6 @@
     </div>
     
 <!-- /Forum List -->
-
 
 {% endfor %}
 </ul>

@@ -124,6 +124,7 @@ body{
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1rem;
+<<<<<<< Updated upstream
 }
 
 .login-container{
@@ -171,4 +172,10 @@ body{
     text-decoration: none;
 }
 
+.nav-link-personal{
+    color:rgba(0, 0, 0, 0.19)
+}
 
+=======
+}
+>>>>>>> Stashed changes

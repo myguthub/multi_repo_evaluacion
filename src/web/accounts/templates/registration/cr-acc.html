@@ -2,25 +2,18 @@
 
 {% block content %}
 
-<h1> login </h1>
+<h1> Registro </h1>
 
 <ul>
-
     <br>
-    <form method="POST">
+    <form class="form-horizontal col-md-6 login-form-1" method="post"> 
         {% csrf_token %}
         {{form.as_p}}
-        <button class="btn btn-secondary"> Login </button>
-    <br>
-    <a href="{% url 'home' %}"> Back </a>
+    <button class="btn btn-outline-primary"> Iniciar sesión </button>
+    
+    <button class="btn btn-outline-success" > <a href="{% url 'home' %}" style="text-decoration:none"> Regresar </a></button>
     <br>
     </form>
-
-
-
-
-
-
 
 </ul>
 
