@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('apidos/', include('apidos.urls')),
 
     # you need to import the views.py for usage as in DeletePostView.as_view()
     path('', HomeView.as_view(), name='home' ),
